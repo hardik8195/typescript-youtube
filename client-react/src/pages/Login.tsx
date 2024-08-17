@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useAppDispatch } from '../store/hooks';
 import { loginSuccess } from '../store/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
+import { apiUrl } from '../URL/url';
 const Login: React.FC = () => {
 
   const [username, setusername] = useState<string>("");
@@ -15,7 +16,7 @@ const Login: React.FC = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:8080/api/v1/users/login", { username, email, password })
+      const res = await axios.post(`${apiUrl}/users/login`, { username, email, password })
 
 
       dispatch(loginSuccess({ data: res.data.data, access_token: res.data.accessToken }))

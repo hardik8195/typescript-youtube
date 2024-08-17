@@ -1,6 +1,7 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv'
+import cors from 'cors'
 
 dotenv.config({
     path: './.env'
@@ -8,6 +9,14 @@ dotenv.config({
 
 const app = express();
 app.enable("trust proxy")
+
+app.use(cors({
+  origin:'http://54.204.92.0',
+  methods:["POST","GET","PUT","PATCH","DELETE"],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials:true
+}))
+
 
 app.use(express.json({limit:'16kb'}))
 app.use(express.urlencoded({extended:true,limit:'16kb'}))

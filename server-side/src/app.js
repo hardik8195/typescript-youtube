@@ -11,7 +11,7 @@ const app = express();
 app.enable("trust proxy")
 
 app.use(cors({
-  origin:'http://54.227.193.220',
+  origin:'http://web-elb-1590957582.us-east-1.elb.amazonaws.com',
   methods:["POST","GET","PUT","PATCH","DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials:true

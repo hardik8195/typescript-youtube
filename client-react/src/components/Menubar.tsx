@@ -53,7 +53,7 @@ const Menubar = () => {
               <p className={`${mode ? 'text-black' : 'text-white'}`}>Explore</p>
             </li>
           </Link>
-          <Link to='/subcriptions'>
+          <Link to={status?"/subcriptions":"/login"}>
             <li className="flex gap-1 my-1">
               <SubscriptionsIcon className={`${mode ? 'text-black' : 'text-white'}`} />
               <p className={`${mode ? 'text-black' : 'text-white'}`}>Subscriptions</p>
@@ -61,7 +61,7 @@ const Menubar = () => {
           </Link>
 
           <hr className="m-4" />
-          <Link to="/libary">
+          <Link to={status?"/libary":"/login"}>
             <li className="flex gap-1 my-1">
               <LibraryAddIcon className={`${mode ? 'text-black' : 'text-white'}`} />
               <p className={`${mode ? 'text-black' : 'text-white'}`}>Libary</p>

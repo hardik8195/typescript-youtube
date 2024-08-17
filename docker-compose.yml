@@ -2,9 +2,11 @@ services:
   web:
     depends_on:
       - api
+
     build:
       context: ./client-react
       dockerfile: Dockerfile.prod
+    image: hardik8195/client
     ports:
       - "80:80"
 
@@ -12,6 +14,7 @@ services:
     build:
       context: ./server-side
       dockerfile: Dockerfile
+    image: hardik8195/server
     env_file:
       - ./server-side/.env
     

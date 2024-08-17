@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.flex-7 {
+    flex: 7;
+  }
+.flex-5 {
+  flex:5;
+}
+.flex-2 {
+  flex: 2;
+}
+.w-360 {
+  width: 300px;
+}
+.mb-45{
+  margin-bottom: 45px;
+}
+.h-202{
+  height: 202px;
+}
+.h-102{
+  height: 102px;
+}
+.max-h-720{
+  max-height: 720px;
+}
+.h-500{
+  height: 500px;
+}
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}

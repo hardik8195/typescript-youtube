@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>API Documentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    li span {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>API Documentation</h1>
+    <p>Welcome to the API Documentation of video Hosting WebApp!</p>
+    <h2>Available Routes:</h2>
+    <ul>
+      <li><span><h2>User routes</h2></span></li>
+      <li><span>POST</span> /api/v1/users/register - Create a new user.</li>
+      <li><span>POST</span> /api/v1/users/login - User can log in.</li>
+      <li><span>GET</span> /api/v1/users/find/:id - find a user by id.</li>
+      <li><span>POST</span> /api/v1/users/refresh-Token - User can refresh the access token .</li>
+      <h3>Protected routes</h3>
+      <li><span>POST</span> /api/v1/users/logout - User can log out.</li>
+      <li><span>POST</span> /api/v1/users/change-password - Update an existing user password.</li>
+      <li><span>PATCH</span> /api/v1/users/update-account - Update an existing user.</li>
+      <li><span>DELETE</span> /api/v1/users/delete-user - Delete a user</li>
+      <li><span>PUT</span> /api/v1/users/sub/:id - current user can subscribe a video by videoId</li>
+      <li><span>PUT</span> /api/v1/users/unsub/:id - current user can unsubscribe a video by videoId</li>
+      <li><span>PUT</span> /api/v1/users/like - current user can like a video by videoId</li>
+      <li><span>PUT</span> /api/v1/users/dislike - current user can dislike a video by videoId</li>
+      <li><span>PUT</span> /api/v1/users/save -current user can save a video by videoId</li>
+     
+     
+      <li><span><h2>Video routes</h2></span></li>
+      <li><span>GET</span> /api/v1/videos/find/:id - can get a video by videoId</li>  
+      <li><span>PUT</span> /api/v1/videos/add-view - no. of users watches a video</li>
+      <li><span>GET</span> /api/v1/videos/random - random videos</li>
+      <li><span>GET</span> /api/v1/videos/trend - trending videos</li>
+      <li><span>GET</span> /api/v1/videos/search - video can be search by title</li>
+      <h3>Protected routes</h3>
+      <li><span>POST</span> /api/v1/videos - current user can upload a video</li>
+      <li><span>PUT</span> /api/v1/videos/:id - current user can update a video by videoId</li>
+      <li><span>DELETE</span> /api/v1/videos/:id - current user can delete a video by videoId</li>
+      <li><span>GET</span> /api/v1/videos/tags - get a video by tags</li>
+      <li><span>GET</span> /api/v1/videos/sub - subscribed videos</li>
+
+      <li><span><h2>Comment routes</h2></span></li>
+      <li><span>POST</span> /api/v1/comments - current user can add a comment on video</li>
+      <li><span>DELETE</span> /api/v1/comments/:id - current user can delete a comment</li> 
+      <li><span>GET</span> /api/v1/comments/:videoId - get all the comments on video</li>
+      <h1>jil;j</h1>
+
+    </ul>
+
+  </div>
+</body>
+</html>

@@ -8,19 +8,16 @@ services:
     ports:
       - "80:80"
 
-
   api:
     build:
       context: ./server-side
       dockerfile: Dockerfile
-    volumes:
-      - ./server-side:/app
-      - /app/node_modules
     env_file:
       - ./server-side/.env
     
     networks:
       - app-network
+
   nginx:
     image: nginx
     ports: 

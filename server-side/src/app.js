@@ -10,15 +10,6 @@ dotenv.config({
 const app = express();
 app.enable("trust proxy")
 
-app.use(cors({
-  origin:'http://web-elb-1590957582.us-east-1.elb.amazonaws.com',
-  methods:["POST","GET","PUT","PATCH","DELETE"],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials:true
-}))
-
-app.options('*', cors());
-
 app.use(express.json({limit:'16kb'}))
 app.use(express.urlencoded({extended:true,limit:'16kb'}))
 app.use(express.static('public'))

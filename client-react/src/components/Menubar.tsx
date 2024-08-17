@@ -8,6 +8,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import axios from 'axios';
 import { Logout } from '../store/userSlice';
+import { apiUrl } from '../URL/url';
 
 const Menubar = () => {
   const status = useAppSelector((state) => state.user.status)
@@ -18,7 +19,7 @@ const Menubar = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("http://localhost:8080/api/v1/users/logout", {}, {
+      await axios.post(`${apiUrl}/users/logout`, {}, {
         headers: {
           "Authorization": `Bearer ${user?.access_token}`
         }

@@ -3,6 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    image: hardik8195/api
     env_file:
       - ./.env
     

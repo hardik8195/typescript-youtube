@@ -11,7 +11,7 @@ const app = express();
 app.enable("trust proxy")
 
 app.use(cors({
-  origin:'http://54.204.92.0',
+  origin:'*',
   methods:["POST","GET","PUT","PATCH","DELETE"],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials:true

@@ -3,5 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.prod
+    image: hardik8195/web
     ports:
       - "80:80"

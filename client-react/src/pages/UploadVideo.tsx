@@ -44,7 +44,6 @@ const UploadVideo = () => {
                     
                 },
             })
-            console.log(res.data)
             setLoading(false)
             navigate("/")
         } catch (error) {

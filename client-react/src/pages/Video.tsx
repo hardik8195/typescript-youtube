@@ -16,6 +16,7 @@ import { User } from '../models/model';
 import { savedVideos, subscription } from '../store/userSlice';
 import CommentSection from '../components/Comments';
 import Recommendation from '../components/Recommendation';
+import ReactPlayer from 'react-player';
 
 const Video: React.FC = () => {
     const path = useLocation().pathname.split("/")[2]
@@ -101,15 +102,17 @@ const Video: React.FC = () => {
             <div>
                 <div className="flex gap-5 my-3">
                     <div className="flex-5 mx-2">
-                        <iframe
-                            width="100%"
-                            style={{ height: "600px" }}
-                            allowFullScreen
-                            title={video?.title}
-                            src={video?.videoFile}>
-
-                            Your browser does not support the video tag.
-                        </iframe>
+                        <ReactPlayer
+                            url={video?.videoFile}      
+                            width="100%"                
+                            height="600px"                
+                            controls                     
+                            playing={false}              
+                            config={{
+                                youtube: { playerVars: { showinfo: 1 } },
+                                file: { attributes: { controlsList: 'nodownload' } } // Disable download on self-hosted
+                            }}
+                        />
                         <div className={`${mode ? 'text-black' : 'text-white'} my-3`}>
                             <h1>{video?.title}</h1>
                             <div className="flex">
@@ -129,7 +132,7 @@ const Video: React.FC = () => {
                                     }
                                     <div className='flex gap-1' >
                                         <div className='cursor-pointer' onClick={handleLibary}>
-                                            {user?.data.savedVideos?.includes(video?._id?? "") ?
+                                            {user?.data.savedVideos?.includes(video?._id ?? "") ?
                                                 (<BookmarkIcon />) :
                                                 (<BookmarkBorderIcon />)
                                             }

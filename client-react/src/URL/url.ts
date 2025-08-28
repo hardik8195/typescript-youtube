@@ -1,1 +1,1 @@
-export const apiUrl = "http://localhost:8080/api/v1"
+export const apiUrl = "https://typescript-youtube-1.onrender.com/api/v1"

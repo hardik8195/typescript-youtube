@@ -2,10 +2,6 @@
 
 A full-stack YouTube clone application built with React, Node.js, and MongoDB. This project replicates core YouTube features with a modern UI and robust backend architecture.
 
-# YouTube Clone
-
-A full-stack YouTube clone application built with React, Node.js, and MongoDB. This project replicates core YouTube features with a modern UI and robust backend architecture.
-
 ## 📸 Screenshots
 
 ### Home Page

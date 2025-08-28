@@ -24,16 +24,24 @@ const Video: React.FC = () => {
     const user = useAppSelector(state => state.user.user)
     const mode = useAppSelector(state => state.mode.mode)
     const [channel, setChannel] = useState<User["data"]>()
+    const [loading, setLoading] = useState<boolean>(true)
     const dispatch = useAppDispatch()
     const navigate = useNavigate()
 
     useEffect(() => {
         const fetchData = async () => {
-            const videoRes = await axios.get(`${apiUrl}/videos/find/${path}`)
-            const userRes = await axios.get(`${apiUrl}/users/find/${videoRes.data.userId}`)
+            try {
+                setLoading(true)
+                const videoRes = await axios.get(`${apiUrl}/videos/find/${path}`)
+                const userRes = await axios.get(`${apiUrl}/users/find/${videoRes.data.userId}`)
 
-            dispatch(setVideo(videoRes.data))
-            setChannel(userRes.data)
+                dispatch(setVideo(videoRes.data))
+                setChannel(userRes.data)
+            } catch (error) {
+                console.log("Error fetching video data:", error)
+            } finally {
+                setLoading(false)
+            }
         }
         fetchData()
     }, [path, dispatch])
@@ -97,6 +105,22 @@ const Video: React.FC = () => {
             console.log("error in deleting the vedio")
         }
     }
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="text-lg">Loading video...</div>
+            </div>
+        )
+    }
+
+    if (!video) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <div className="text-lg">Video not found</div>
+            </div>
+        )
+    }
+
     return (
         <>
             <div>
@@ -184,7 +208,9 @@ const Video: React.FC = () => {
                                 </div>
                             </div>
                         </div>
-                        <CommentSection />
+                        {video?._id && user?.access_token && (
+                            <CommentSection />
+                        )}
                     </div>
                     <div className="flex-2">
                         <Recommendation />

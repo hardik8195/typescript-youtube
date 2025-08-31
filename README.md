@@ -9,7 +9,7 @@ A full-stack YouTube clone application built with React, Node.js, and MongoDB. T
 *Main page with video recommendations and trending content*
 
 ### Video Player
-![Video Player](screenshots/video.png)
+![Video Player](screenshots/vedio.png)
 
 
 ### User Profile

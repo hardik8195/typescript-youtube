@@ -2,10 +2,6 @@
 
 A full-stack YouTube clone application built with React, Node.js, and MongoDB. This project replicates core YouTube features with a modern UI and robust backend architecture.
 
-# YouTube Clone
-
-A full-stack YouTube clone application built with React, Node.js, and MongoDB. This project replicates core YouTube features with a modern UI and robust backend architecture.
-
 ## 📸 Screenshots
 
 ### Home Page
@@ -13,22 +9,18 @@ A full-stack YouTube clone application built with React, Node.js, and MongoDB. T
 *Main page with video recommendations and trending content*
 
 ### Video Player
-![Video Player](screenshots/video-player.png)
-*Video playback page with comments and related videos*
+![Video Player](screenshots/video.png)
+
 
 ### User Profile
-![User Profile](screenshots/profile.png)
+![User Profile](screenshots/change_account.png)
 *User profile page with uploaded videos and channel information*
 
 ### Dark Mode
-![Dark Mode](screenshots/dark-mode.png)
+![Dark Mode](screenshots/home_white.png)
 *Application in dark mode for better night viewing*
 
-### Search Results
-![Search Results](screenshots/search.png)
-*Search functionality with filtered results*
 
-// ... existing code ...
 
 ## 🚀 Features
 
@@ -155,8 +147,8 @@ npm start
 ```
 
 The application will be available at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:8080
+- Frontend: https://typescript-youtube.vercel.app/
+- Backend: https://typescript-youtube-1.onrender.com/
 
 ## 🔒 API Endpoints
 

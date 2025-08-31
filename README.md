@@ -1,4 +1,4 @@
-# YouTube Clone
+# StreamSphere - Video Hosting Web app
 
 A full-stack YouTube clone application built with React, Node.js, and MongoDB. This project replicates core YouTube features with a modern UI and robust backend architecture.
 
